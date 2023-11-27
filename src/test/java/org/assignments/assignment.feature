@@ -14,9 +14,7 @@ Feature: Assignment 1 - Store JSON and CSV
     * def customFolderPath = '/home/kushas/Documents/Learnings/Karate/karateLearning/files'
 
     * eval org.assignments.FileCreator.createJsonFile(jsonResponse)
-#    * eval Learnings.utils.FileCreator.createJsonFile(jsonResponse)
     * def JavaDemo = Java.type('org.assignments.FileCreator')
-#    * def JavaDemo = Java.type('Learnings.utils.FileCreator')
     * def result1 = JavaDemo.createJsonFile(jsonResponse)
 
   Scenario: 2. Send GET request to /posts
