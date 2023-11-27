@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"org\/assignments\/assignment[1:8]","start":1701065493939,"end":1701065495189,"title":"org\/assignments\/assignment[1:8] 11:41:33.939-11:41:35.189 1. Get Posts and Create Files"},{"id":2,"group":1,"content":"org\/assignments\/assignment[2:22]","start":1701065495206,"end":1701065496026,"title":"org\/assignments\/assignment[2:22] 11:41:35.206-11:41:36.026 2. Send GET request to \/posts"},{"id":3,"group":1,"content":"org\/assignments\/assignment[5:37]","start":1701065496035,"end":1701065496604,"title":"org\/assignments\/assignment[5:37] 11:41:36.035-11:41:36.604 3. Send GET request to \/posts"},{"id":4,"group":1,"content":"org\/assignments\/assignment[7:51]","start":1701065496611,"end":1701065497181,"title":"org\/assignments\/assignment[7:51] 11:41:36.611-11:41:37.181 4. Send GET request to \/posts"},{"id":5,"group":1,"content":"org\/assignments\/assignment[8:70]","start":1701065497193,"end":1701065497724,"title":"org\/assignments\/assignment[8:70] 11:41:37.193-11:41:37.724 5. Execute JavaScript to Create Array"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
